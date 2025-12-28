@@ -1,0 +1,13 @@
+node_modules
+src
+test
+
+.git
+.gitignore
+.prettierrc
+
+bun.lock
+tsconfig.json
+tsconfig.dts.json
+
+build.ts
