@@ -1,0 +1,71 @@
+{
+  "name": "@39choko/lanyard",
+  "version": "1.0.0",
+  "homepage": "https://github.com/39Choko/lanyard",
+  "bugs": "https://github.com/39Choko/lanyard/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/39Choko/lanyard"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "39Choko",
+    "url": "https://github.com/39Choko"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "prettier": "bunx prettier --write .",
+    "test": "bun test",
+    "build": "bun build.ts",
+    "release": "bun run prettier && bun run build && bun run test && bun publish"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client/index.mjs",
+      "require": "./dist/client/index.js",
+      "types": "./dist/client/index.d.ts"
+    },
+    "./api": {
+      "import": "./dist/api/index.mjs",
+      "require": "./dist/api/index.js",
+      "types": "./dist/api/index.d.ts"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.js"
+    }
+  },
+  "keywords": [
+    "discord",
+    "lanyard",
+    "presence"
+  ],
+  "devDependencies": {
+    "@39choko/prettier-config": "^1.0.2",
+    "@types/bun": "latest",
+    "esbuild-fix-imports-plugin": "^1.0.23",
+    "prettier": "^3.7.4",
+    "tsup": "^8.5.1"
+  },
+  "peerDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "peerDependenciesMeta": {
+    "@types/bun": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  }
+}
