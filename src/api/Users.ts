@@ -24,15 +24,8 @@ export class Users {
     return userRequest.data.discord_user.display_name;
   }
 
-  public async getAvatarURL(userId: string): Promise<string | null> {
-    const userRequest = await this.getUser(userId);
-
-    if (userRequest.success === false) {
-      return null;
-    }
-
-    const avatarHash = userRequest.data.discord_user.avatar;
-    return `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}.png`;
+  public getAvatarURL(userId: string): string {
+    return `https://api.lanyard.rest/${userId}.png`;
   }
 
   public async getPlatformStatus(userId: string): Promise<string[] | null> {
