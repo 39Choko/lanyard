@@ -1,5 +1,6 @@
 {
   "name": "@39choko/lanyard",
+  "description": "A simple Lanyard client.",
   "version": "1.0.0",
   "homepage": "https://github.com/39Choko/lanyard",
   "bugs": "https://github.com/39Choko/lanyard/issues",
