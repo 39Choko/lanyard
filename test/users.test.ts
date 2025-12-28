@@ -64,8 +64,8 @@ describe("Users API", () => {
   test("getAvatarURL returns correct URL", async () => {
     global.fetch = mock(() => Promise.resolve(new Response(JSON.stringify(mockSuccessResponse)))) as any;
 
-    const avatarURL = await client.users.getAvatarURL(mockUserId);
-    expect(avatarURL).toBe(`https://cdn.discordapp.com/avatars/${mockUserId}/e4479e082bb156a6f004fb3b34d678ac.png`);
+    const avatarURL = client.users.getAvatarURL(mockUserId);
+    expect(avatarURL).toBe(`https://api.lanyard.rest/${mockUserId}.png`);
   });
 
   test("getPlatformStatus returns correct status", async () => {
