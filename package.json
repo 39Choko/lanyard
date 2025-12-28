@@ -1,47 +1,39 @@
 {
   "name": "@39choko/lanyard",
-  "description": "A simple Lanyard client.",
   "version": "1.0.1",
+  "description": "A simple Lanyard client.",
+  "keywords": [
+    "discord",
+    "lanyard",
+    "presence"
+  ],
   "homepage": "https://github.com/39Choko/lanyard",
   "bugs": "https://github.com/39Choko/lanyard/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/39Choko/lanyard.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
   "license": "MIT",
   "author": {
     "name": "39Choko",
     "url": "https://github.com/39Choko"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "prettier": "bunx prettier --write .",
-    "test": "bun test",
-    "build": "bun build.ts",
-    "release": "bun run prettier && bun run build && bun run test && bun publish"
-  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./client": {
+      "types": "./dist/client/index.d.ts",
       "import": "./dist/client/index.mjs",
-      "require": "./dist/client/index.js",
-      "types": "./dist/client/index.d.ts"
+      "require": "./dist/client/index.js"
     },
     "./api": {
+      "types": "./dist/api/index.d.ts",
       "import": "./dist/api/index.mjs",
-      "require": "./dist/api/index.js",
-      "types": "./dist/api/index.d.ts"
+      "require": "./dist/api/index.js"
     },
     "./types": {
       "types": "./dist/types.d.ts",
@@ -49,11 +41,15 @@
       "require": "./dist/types.js"
     }
   },
-  "keywords": [
-    "discord",
-    "lanyard",
-    "presence"
-  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "bun build.ts",
+    "prettier": "bunx prettier --write .",
+    "release": "bun run prettier && bun run build && bun run test && bun publish",
+    "test": "bun test"
+  },
   "devDependencies": {
     "@39choko/prettier-config": "^1.0.2",
     "@types/bun": "latest",
@@ -72,5 +68,9 @@
     "typescript": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }

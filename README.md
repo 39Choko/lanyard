@@ -25,7 +25,7 @@ deno install npm:@39choko/lanyard
 ## Example usage
 
 ```ts
-import { Client } from '@39choko/lanyard';
+import { Client } from "@39choko/lanyard";
 
 const client = new Client();
 ```
